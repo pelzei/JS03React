@@ -1,0 +1,55 @@
+.meal {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.meal h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.mealimage div {
+  width: 15%;
+}
+
+.description div {
+  width: 400px;
+}
+
+.mealimage img {
+  width: 100px;
+  height: 100px;
+}
+
+.description {
+  font-style: italic;
+}
+
+.price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #ad5502;
+  font-size: 1.25rem;
+  display: flex;
+}
+
+.price button {
+  font-size: 1rem;
+  font-weight: normal;
+  cursor: pointer;
+  background-color: #d37903;
+  border: 1px solid #e2b170;
+  color: black;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.price button:hover,
+.price button:active {
+  background-color: #e2b170;
+  border-color: #641e03;
+}
