@@ -36,7 +36,16 @@ const MealItem = (props) => {
         <div className={classes.price}>
           <div>{price}</div>
           <div>
-            <Link to={`/MealsDetails/${props.id}`}>
+            <Link
+              to={`/MealsDetails/${props.id}`}
+              id={props.id}
+              key={props.id}
+              title={props.title}
+              short={props.short}
+              desc={props.desc}
+              price={props.price}
+              image={props.image}
+            >
               <button>Läs mer</button>
             </Link>
           </div>

@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-
 import React from "react";
+import { useDispatch } from "react-redux";
+
+import { foodsActions } from "../../store/redux/foods-slice";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 import classes from "./AvailableMeals.module.css";
 
 const AvailableMeals = () => {
+  const dispatch = useDispatch();
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
@@ -23,6 +26,10 @@ const AvailableMeals = () => {
 
       const responseData = await response.json();
 
+      const setFoodsItemsHandler = (items) => {
+        dispatch(foodsActions.setFoods(items));
+      };
+
       const loadedMeals = [];
 
       for (const key in responseData) {
@@ -35,6 +42,7 @@ const AvailableMeals = () => {
           image: responseData[key].image,
         });
       }
+      setFoodsItemsHandler(loadedMeals);
       setMeals(loadedMeals);
       setIsLoading(false);
     };
@@ -43,7 +51,7 @@ const AvailableMeals = () => {
       setIsLoading(false);
       setHttpError(error.message);
     });
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return (

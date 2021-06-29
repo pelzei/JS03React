@@ -1,17 +1,50 @@
-/* .detailcard {
+.detailcard {
   max-width: 60rem;
   width: 90%;
-  margin: 2rem auto;
+  margin: 4rem;
+}
+
+.leftside {
+  width: 35%;
+}
+
+.productdata {
+  display: flex;
+  justify-content: space-between;
 }
 
 .productimage {
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 .productimage img {
-  height: 10rem;
-  width: 10rem;
-  object-fit: cover;
+  width: 20rem;
+  height: 20rem;
+  margin-bottom: 1rem;
+  border-radius: 14px;
 }
+
+.productimage button {
+  font-size: 1rem;
+  font-weight: normal;
+  cursor: pointer;
+  background-color: #d37903;
+  border: 1px solid #e2b170;
+  color: black;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.productimage button:hover,
+.productimage button:active {
+  background-color: #e2b170;
+  border-color: #641e03;
+}
+
+.producttext {
+  width: 65%;
+}
+
 .producttext h2 {
   font-family: "Berkshire Swash";
   font-size: 3rem;
@@ -20,41 +53,37 @@
 .producttext h5 {
   font-family: "Berkshire Swash";
   font-size: 1.5rem;
-  margin: 0.5 0 0rem 0;
+  margin: 0.2 0 0rem 0;
 }
 .producttext h4 {
   margin: 0;
 }
 .productactions {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-li {
-  margin: 1rem auto;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  text-align: center;
-  max-width: 25rem;
-  background: whitesmoke;
-}
-img {
-  width: 38rem;
-  height: 30rem;
-  border-radius: 5%;
-  object-fit: cover;
-}
-p {
-  font-size: 1.2rem;
-}
-.item__data {
-  display: flex;
-  justify-content: space-between;
-}
-.item__total {
+
+.productactions h4 {
+  font-family: "Berkshire Swash";
+  font-size: 2rem;
+  margin-top: 0.25rem;
   font-weight: bold;
-  margin: 1rem 0;
-  border-top: 1px solid #474747;
-  border-bottom: 2px solid #474747;
-  padding: 0.25rem 0;
-  width: auto;
-} */
+  color: #ad5502;
+}
+
+.productactions button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #8a2b06;
+  border: 1px solid #8a2b06;
+  color: white;
+  padding: 0.25rem 2rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.productactions button:hover,
+.productactions button:active {
+  background-color: #641e03;
+  border-color: #641e03;
+}
