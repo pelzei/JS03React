@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { cartActions } from "../../../store/redux/cart-slice";
 import Card from "../../UI/Card";
 import classes from "./MealDetail.module.css";
@@ -32,7 +33,9 @@ const MealDetail = () => {
         <div className={classes.productdata}>
           <div className={classes.productimage}>
             <img src={foodItem.image} alt={foodItem.desc} />
-            <button className={classes.outline}>Tillbaka till menyn</button>
+            <button className={classes.outline}>
+              <Link to="/Meals">Tillbaka till menyn</Link>
+            </button>
           </div>
           <div className={classes.producttext}>
             <div>
