@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import Card from "../UI/Card";
@@ -34,6 +35,16 @@ const Cart = (props) => {
     //dispatch(cartActions.addItemToCart({ id, quantity = 1 }));
   };
 
+  /*const clearCart = () => {
+    dispatch(
+      cartActions.clearCart({
+        items: [],
+        totalQuantity: 0,
+        totalAmount: 0,
+      })
+    );
+  };*/
+
   const cartItems = (
     <ul className={classes["cart-items"]}>
       {cartState.map((item) => (
@@ -68,14 +79,16 @@ const Cart = (props) => {
     );
     setIsSubmitting(false);
     setDidSubmit(true);
-    dispatch(cartActions.clearCart());
+    //clearCart();
   };
 
   const modalActions = (
     <div className={classes.actions}>
-      <button className={classes["button--alt"]} onClick={props.onClose}>
-        Close
-      </button>
+      <Link to="/meals">
+        <button className={classes["button--alt"]} onClick={props.onClose}>
+          Close
+        </button>
+      </Link>
       {hasItems && (
         <button className={classes.button} onClick={orderHandler}>
           Beställ
@@ -105,9 +118,11 @@ const Cart = (props) => {
         Din order har skickats in och kommer skyndsamt att ställas i ordning!
       </p>{" "}
       <div className={classes.actions}>
-        <button className={classes.button} onClick={props.onClose}>
-          Close
-        </button>
+        <Link to="/meals">
+          <button className={classes.button} onClick={props.onClose}>
+            Close
+          </button>
+        </Link>
       </div>
     </React.Fragment>
   );

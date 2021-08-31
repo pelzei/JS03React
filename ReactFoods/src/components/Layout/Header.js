@@ -15,9 +15,8 @@ const Header = (props) => {
       </Link>
       {showProfile && <Link to="/Profile">Profile</Link>}
       <Link to="/Cart">
-        <HeaderCartButton onClick={props.onShowCart} />
+        <HeaderCartButton />
       </Link>
-      <Link to="/Login">Log in</Link>
     </header>
   );
 };

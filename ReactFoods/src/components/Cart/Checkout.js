@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import classes from "./Checkout.module.css";
 
 const isEmpty = (value) => value.trim().length === 0;
@@ -96,9 +97,9 @@ const Checkout = (props) => {
         {!formInputsValidity.city && <p>Please enter a city</p>}
       </div>
       <div className={classes.actions}>
-        <button type="button" onClick={props.onCancel}>
-          Cancel
-        </button>
+        <Link to="/Meals">
+          <button type="button">Cancel</button>
+        </Link>
         <button className={classes.submit}>Confirm</button>
       </div>
     </form>
